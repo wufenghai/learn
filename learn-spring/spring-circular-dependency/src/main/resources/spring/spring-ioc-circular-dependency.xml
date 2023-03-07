@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="classA" class="com.example.spring.circular.dependency.model.ClassA">
+        <constructor-arg ref="classB"></constructor-arg>
+<!--        <property name="classB" ref="classB"></property>-->
+    </bean>
+
+    <bean id="classB" class="com.example.spring.circular.dependency.model.ClassB">
+        <constructor-arg ref="classA"></constructor-arg>
+<!--        <property name="classA" ref="classA"></property>-->
+    </bean>
+</beans>

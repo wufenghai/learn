@@ -1,0 +1,5 @@
+#  如果配置文件properties和yml都存在，则以properties配置文件为主
+server:
+  port: 9090
+  servlet:
+    context-path: /yaml

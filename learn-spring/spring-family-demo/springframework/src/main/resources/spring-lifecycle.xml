@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    实验十一：bean生命周期-->
+    <!--    ①具体的生命周期过程-->
+    <!--    bean对象创建（调用无参构造器）-->
+    <!--    给bean对象设置属性-->
+    <!--    bean的后置处理器（初始化之前）-->
+    <!--    bean对象初始化（需在配置bean时指定初始化方法）-->
+    <!--    bean的后置处理器（初始化之后）-->
+    <!--    bean对象就绪可以使用-->
+    <!--    bean对象销毁（需在配置bean时指定销毁方法）-->
+    <!--    IOC容器关闭-->
+    <!-- 使用init-method属性指定初始化方法 -->
+    <!-- 使用destroy-method属性指定销毁方法 -->
+    <bean class="com.example.spring.framework.bean.User" scope="prototype" init-method="initMethod" destroy-method="destroyMethod">
+        <property name="id" value="1001"></property>
+        <property name="username" value="admin"></property>
+        <property name="password" value="123456"></property>
+        <property name="age" value="23"></property>
+    </bean>
+
+    <!-- bean的后置处理器要放入IOC容器才能生效 -->
+    <bean id="myBeanProcessor" class="com.example.spring.framework.bean.processor.MyBeanProcessor"/>
+
+</beans>
