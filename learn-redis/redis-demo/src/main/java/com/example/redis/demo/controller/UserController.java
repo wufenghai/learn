@@ -5,9 +5,7 @@ import com.example.redis.demo.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author wfh
@@ -33,5 +31,29 @@ public class UserController {
     public User findById2(@PathVariable Long id){
         User user = userService.findById(id);
         return user;
+    }
+
+    @ApiOperation(value = "delete接口")//swagger标签
+    @DeleteMapping("delete/{id}")//注意接口
+    public String delete(@PathVariable Long id){
+        boolean user = userService.delete(id);
+        if (user) {
+            return "删除成功";
+        }
+        return "删除失败";
+    }
+
+    @ApiOperation(value = "update接口")//swagger标签
+    @PostMapping("update")//注意接口
+    public User update(@RequestBody User user){
+        User temp = userService.update(user);
+        return temp;
+    }
+
+    @ApiOperation(value = "insert接口")//swagger标签
+    @PostMapping("insert")//注意接口
+    public User insert(@RequestBody User user){
+        User temp = userService.insert(user);
+        return temp;
     }
 }
