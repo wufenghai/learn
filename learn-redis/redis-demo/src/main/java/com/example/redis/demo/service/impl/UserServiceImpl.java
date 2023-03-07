@@ -21,7 +21,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     //测试缓存
     @Override
     @Cacheable(cacheNames = "user111", key = " 'id' ")//或者这样写key = "#id"
-    public User findById(long id) {
+    public User findById2(long id) {
         User user = userMapper.selectById(id);
         return user;
     }
