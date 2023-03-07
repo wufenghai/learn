@@ -10,4 +10,11 @@ import com.example.redis.demo.entity.User;
 public interface UserService extends IService<User> {
     //定义一个接口方法
     User findById(long id);
+
+    boolean delete(Long id);
+
+    User update(User user);
+
+    User insert(User user);
+
 }
