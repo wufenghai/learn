@@ -31,7 +31,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     //测试缓存
     @Override
-    @Cacheable(cacheNames = "user111", key = " 'id' ")//或者这样写key = "#id"
+    @Cacheable(cacheNames = "user", key = " 'id' ")//或者这样写key = "#id"
     public User findById2(long id) {
         User user = userMapper.selectById(id);
         return user;
@@ -45,6 +45,24 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return userMapper.selectById(id);
     }
 
-  
+    // 先执行方法体中的代码，成功执行之后删除缓存
+    @CacheEvict(cacheNames = "user", key = "#id") //cache:user:user::1 ; cache:user:user::2
+    public boolean delete(Long id) {
+        // 删除数据库中具有的数据
+        return userMapper.deleteById(id) == 1;
+    }
+
+    // 如果缓存中先前存在，则更新缓存;如果不存在，则将方法的返回值存入缓存
+    @CachePut(cacheNames = "user", key = "#user.id")
+    public User update(User user) {
+        userMapper.updateById(user);
+        return user;
+    }
+
+    @CachePut(cacheNames = "user", key = "#user.id")
+    public User insert(User user) {
+        userMapper.insert(user);
+        return user;
+    }
 
 }
