@@ -5,6 +5,8 @@ import com.example.redis.demo.entity.User;
 import com.example.redis.demo.mapper.UserMapper;
 import com.example.redis.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -25,4 +27,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         User user = userMapper.selectById(id);
         return user;
     }
+
+    // 当调用这个方法的时候，会从一个名叫user的缓存中查询
+    @Cacheable(cacheNames = "user", key = "#id")
+    @Override
+    public User findById(long id) {
+        // 如果不存在则查询数据库,并把查询的结果放入缓存中
+        return userMapper.selectById(id);
+    }
+
+   
 }
