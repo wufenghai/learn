@@ -6,6 +6,7 @@ package com.example.redis.demo.config;
  */
 
 import com.example.redis.demo.mapper.UserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
@@ -25,6 +27,9 @@ import java.time.Duration;
 @Configuration
 @EnableCaching //开启缓存配置
 public class RedisConfig {
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     /**
      * 配置缓存管理器
@@ -77,4 +82,13 @@ public class RedisConfig {
         return RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer());
     }
 
+
+    @Bean
+    public RedisTemplate redisTemplateInit() {
+        //设置序列化Key的实例化对象
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        //设置序列化Value的实例化对象
+        redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
+        return redisTemplate;
+    }
 }
