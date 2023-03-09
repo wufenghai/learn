@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
+ * redis 排行榜实现
  * 用户分数排行榜，分数相同的情况下，获得此分数时间最早的用户排前面
  *
  * @author wfh

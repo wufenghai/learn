@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 /**
+ * redis缓存实现
  * @author wfh
  * @create 2023/3/7 15:58
  */
