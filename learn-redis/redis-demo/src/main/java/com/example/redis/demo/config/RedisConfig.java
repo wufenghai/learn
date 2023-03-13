@@ -18,6 +18,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import org.springframework.cache.interceptor.KeyGenerator;
+
 
 import java.time.Duration;
 
@@ -33,6 +35,7 @@ public class RedisConfig {
 
     /**
      * 配置缓存管理器
+     *
      * @param factory Redis 线程安全连接工厂
      * @return 缓存管理器
      */
@@ -68,6 +71,7 @@ public class RedisConfig {
 
     /**
      * 配置键序列化
+     *
      * @return StringRedisSerializer
      */
     private RedisSerializationContext.SerializationPair<String> keyPair() {
@@ -76,6 +80,7 @@ public class RedisConfig {
 
     /**
      * 配置值序列化，使用 GenericJackson2JsonRedisSerializer 替换默认序列化
+     *
      * @return GenericJackson2JsonRedisSerializer
      */
     private RedisSerializationContext.SerializationPair<Object> valuePair() {
@@ -90,5 +95,20 @@ public class RedisConfig {
         //设置序列化Value的实例化对象
         redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
         return redisTemplate;
+    }
+
+    //------------------------------------------------------------------------------
+    @Bean
+    public KeyGenerator keyGenerator() {
+        return (target, method, params) -> {
+            StringBuilder sb = new StringBuilder();
+            sb.append(target.getClass().getName());
+            sb.append(method.getName());
+            for (Object obj : params) {
+                sb.append(obj.toString());
+            }
+            return sb.toString();
+        };
+
     }
 }
