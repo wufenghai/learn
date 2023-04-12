@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: spring-es
+
+  elasticsearch:
+    uris: http://127.0.0.1:9200
+server:
+  port: 18080
