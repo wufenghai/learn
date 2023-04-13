@@ -1,0 +1,18 @@
+#custom:
+#  elasticsearch:
+#    host: localhost    #??
+#    port: 9200         #??
+#    username: elastic  #???
+#    password: 3bf24a76 #??
+server:
+  port: 18088
+spring:
+  elasticsearch:
+    uris: http://localhost:9200
+
+canal:
+  host: localhost
+  port: 11111
+  destination: example
+  username:
+  password:
