@@ -84,6 +84,7 @@ public class TestClientController {
             Map<String, Object> result = hit.getSourceAsMap();
             System.out.println(result);
         }
+
         //需要进行分装数据
         return Arrays.stream(response.getHits().getHits()).collect(Collectors.toList());
     }
