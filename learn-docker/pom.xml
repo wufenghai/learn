@@ -12,7 +12,7 @@
 	<artifactId>learn-docker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>learn-docker</name>
-	<description>learn-docker</description>
+	<description>学习dockerfile的入门编写</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

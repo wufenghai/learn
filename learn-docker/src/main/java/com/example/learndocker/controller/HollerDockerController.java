@@ -1,6 +1,6 @@
 package com.example.learndocker.controller;
 
-import com.example.learndocker.Test;
+import com.example.learndocker.enums.EnumTest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +17,7 @@ public class HollerDockerController {
 
     @GetMapping
     public String getWolrd() {
-        log.info(Test.OK.getMessage() + " " + Test.OK.getCode());
+        log.info(EnumTest.OK.getMessage() + " " + EnumTest.OK.getCode());
         return "Holler Docker !";
     }
 }
