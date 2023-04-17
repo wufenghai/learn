@@ -1,18 +1,14 @@
-#custom:
-#  elasticsearch:
-#    host: localhost    #??
-#    port: 9200         #??
-#    username: elastic  #???
-#    password: 3bf24a76 #??
 server:
-  port: 18088
+  port: 8500
+
 spring:
+  #elasticsearch路径配置
   elasticsearch:
     uris: http://localhost:9200
 
+#canal自定义配置
 canal:
-  host: localhost
+  host: "localhost"
   port: 11111
-  destination: example
-  username:
-  password:
+  destination: "example"
+  has-sync-instance-to-es: false

@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: usage_message
+
+logging:
+  level:
+    org: error
+
+
+tutorial:
+  client:
+    duration: 10000
