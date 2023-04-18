@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * 访问 http://127.0.0.1:8080/oauth/authorize?client_id=clientapp&redirect_uri=http://127.0.0.1:9090/callback&response_type=code&scope=read_userinfo 地址
  * @author wfh
  * @create 2023/4/18 14:58
  */
