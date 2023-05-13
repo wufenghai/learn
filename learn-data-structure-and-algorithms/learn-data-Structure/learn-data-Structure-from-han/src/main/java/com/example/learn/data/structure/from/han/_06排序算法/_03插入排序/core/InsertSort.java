@@ -91,9 +91,11 @@ public class InsertSort {
 
         //使用for循环来把代码简化
         //定义待插入的数
+        int insetVal = 0;
+        int insertIndex = 0;
         for (int i = 1; i < arr.length; i++) {
-            int insetVal = arr[i];
-            int insertIndex = i - 1;//即arr[1]的前面这个数的下标
+            insetVal = arr[i];
+            insertIndex = i - 1;//即arr[1]的前面这个数的下标
 
             //给insertVal 找到插入的位置
             //说明
