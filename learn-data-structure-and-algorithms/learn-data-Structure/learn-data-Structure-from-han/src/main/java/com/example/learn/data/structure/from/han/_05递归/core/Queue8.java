@@ -46,6 +46,7 @@ public class Queue8 {
      * @return
      */
     private boolean judge(int n) {
+        judgeCount++;
         for (int i = 0; i < n; i++) {
             // 说明
             //1. array[i] == array[n]  表示判断 第n个皇后是否和前面的n-1个皇后在同一列
