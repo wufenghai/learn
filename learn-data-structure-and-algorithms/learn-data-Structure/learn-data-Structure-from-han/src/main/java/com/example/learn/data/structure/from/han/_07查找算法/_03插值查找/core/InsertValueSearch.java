@@ -1,5 +1,11 @@
 package com.example.learn.data.structure.from.han._07查找算法._03插值查找.core;
 
+/**
+ * 插值查找注意事项：
+ *
+ * 1) 对于数据量较大，关键字分布比较均匀的查找表来说，采用插值查找, 速度较快.
+ * 2) 关键字分布不均匀的情况下，该方法不一定比折半查找要好
+ */
 public class InsertValueSearch {
 
     public static void main(String[] args) {
