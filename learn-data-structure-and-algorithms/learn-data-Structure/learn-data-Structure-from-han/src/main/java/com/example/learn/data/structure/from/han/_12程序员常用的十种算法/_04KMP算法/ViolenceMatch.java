@@ -1,4 +1,4 @@
-package com.example.learn.data.structure.from.han._12程序员常用的十种算法.KMP算法;
+package com.example.learn.data.structure.from.han._12程序员常用的十种算法._04KMP算法;
 
 public class ViolenceMatch {
     public static void main(String[] args) {
