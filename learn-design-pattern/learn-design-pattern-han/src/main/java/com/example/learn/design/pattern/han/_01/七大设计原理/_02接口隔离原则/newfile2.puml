@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Interface1{
+    operation1();
+}
+
+interface Interface2{
+    operation2();
+    operation3();
+}
+
+interface Interface3{
+    operation4();
+    operation5();
+}
+
+class A
+
+class B
+
+class C
+
+class D
+
+'类B实现Interface1、Interface2接口
+Interface1<|..B
+Interface2<|..B
+'类D实现Interface1、Interface3接口
+Interface1<|..D
+Interface3<|..D
+'类A依赖Interface1、Interface2接口
+Interface1<..A
+Interface2<..A
+'类C依赖Interface1、Interface3接口
+Interface1<..C
+Interface3<..C
+
+
+
+@enduml
