@@ -2,17 +2,17 @@
 'https://plantuml.com/class-diagram
 
 interface Interface1{
-    operation1();
+    operation1()
 }
 
 interface Interface2{
-    operation2();
-    operation3();
+    operation2()
+    operation3()
 }
 
 interface Interface3{
-    operation4();
-    operation5();
+    operation4()
+    operation5()
 }
 
 class A

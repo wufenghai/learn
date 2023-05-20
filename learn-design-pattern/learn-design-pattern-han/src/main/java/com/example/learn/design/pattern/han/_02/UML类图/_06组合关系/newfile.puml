@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Moniter
+
+class Mouse
+
+class Computer{
+    Mouse mouse = new Mouse()
+    Moniter moniter = new Moniter()
+    setMouse(Mouse mouse)
+    setMoniter(Moniter moniter)
+}
+
+
+Computer *-- Moniter
+Computer *-- Mouse
+
+@enduml

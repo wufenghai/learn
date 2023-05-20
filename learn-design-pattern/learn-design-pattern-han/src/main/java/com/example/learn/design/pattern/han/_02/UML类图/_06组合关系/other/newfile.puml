@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class IDCard
+
+class Head
+
+class Person {
+    IDCard card
+    Head head = new Head()
+
+}
+
+Person o-- IDCard
+Person *-- Head
+@enduml

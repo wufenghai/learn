@@ -3,10 +3,10 @@
 
 '如果A类有其他的类被继承了，A类一旦改变 B类也会跟着改变
 class A{
-    operation1();
-    operation2();
+    operation1()
+    operation2()
 '    B类并不想用这个方法
-    operation3();
+    operation3()
 }
 
 class B
@@ -16,43 +16,43 @@ A <|--B
 
 
 class A1{
-    operation1();
-    operation2();
+    operation1()
+    operation2()
 '    B类并不想用这个方法
-    operation3();
+    operation3()
 }
 
 class B1{
-    operation1(A1 a1);
+    operation1(A1 a1)
 }
 '依赖关系
 A1 <..B1
 
 
 class A2{
-    operation1();
-    operation2();
+    operation1()
+    operation2()
 '    B类并不想用这个方法
-    operation3();
+    operation3()
 }
 
 class B2{
-    A2 a2;
-    setA2(A2 a2);
+    A2 a2
+    setA2(A2 a2)
 }
 '聚合关系
 A2 o--B2
 
 
 class A3{
-    operation1();
-    operation2();
+    operation1()
+    operation2()
 '    B类并不想用这个方法
-    operation3();
+    operation3()
 }
 
 class B3{
-    A3 a3 = new A3();
+    A3 a3 = new A3()
 }
 '聚合关系
 A3 *--B3

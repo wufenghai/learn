@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface PersonService{
+    delete(Integer id)
+}
+
+class PersonServiceBean
+
+PersonService <|.. PersonServiceBean
+
+@enduml
