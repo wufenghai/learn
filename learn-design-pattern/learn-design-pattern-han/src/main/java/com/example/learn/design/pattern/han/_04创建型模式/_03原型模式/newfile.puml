@@ -1,0 +1,13 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Sleep{
+    String name
+    int age
+}
+
+class Client
+
+Sleep <.. Client
+
+@enduml
