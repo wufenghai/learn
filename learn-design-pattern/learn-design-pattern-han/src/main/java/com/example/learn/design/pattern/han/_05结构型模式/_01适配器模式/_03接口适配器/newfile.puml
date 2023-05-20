@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Interface4 {
+     void m1()
+     void m2()
+     void m3()
+     void m4()
+}
+
+'默认实现接口的所有方法
+abstract class AbsAdapter
+
+Interface4 <|.. AbsAdapter
+
+@enduml

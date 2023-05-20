@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Voltage220V {
+    int output220V()
+}
+
+interface IVoltage5V{
+    int output5V()
+}
+
+class VoltageAdapter
+
+class Phone{
+    charging(IVoltage5V iVoltage5V)
+}
+
+class Client
+
+
+Voltage220V <|-- VoltageAdapter
+IVoltage5V <|.. VoltageAdapter
+
+IVoltage5V <.. Phone
+
+Phone <.. Client
+VoltageAdapter <.. Client
+
+@enduml
