@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'产品
+class House
+
+abstract class HouseBuilder{
+    House house = new House()
+    buildBasic()
+    buildWalls()
+    roofed()
+    House buildHouse()
+}
+
+class CommonHouse
+
+class HighBuilding
+
+class HouseDirector{
+    HouseBuilder houseBuilder
+}
+
+class Client
+
+
+HouseBuilder *-- House
+
+HouseBuilder <|-- CommonHouse
+HouseBuilder <|-- HighBuilding
+HouseDirector o-- HouseBuilder
+
+HouseDirector <.. Client
+CommonHouse <.. Client
+HighBuilding <.. Client
+
+@enduml
