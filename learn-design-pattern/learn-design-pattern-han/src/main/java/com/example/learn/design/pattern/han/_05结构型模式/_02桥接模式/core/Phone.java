@@ -1,4 +1,4 @@
-package com.example.learn.design.pattern.han._05结构型模式._02桥接模式.code;
+package com.example.learn.design.pattern.han._05结构型模式._02桥接模式.core;
 
 //抽象类  桥的感觉 通过这个桥找到对应的Xiaomi或者vivo
 public abstract class Phone {

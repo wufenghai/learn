@@ -1,4 +1,4 @@
-package com.example.learn.design.pattern.han._05结构型模式._02桥接模式.code;
+package com.example.learn.design.pattern.han._05结构型模式._02桥接模式.core;
 
 //折叠式手机类，继承 抽象类 Phone，真正干活的是实现类
 public class FoldedPhone extends Phone {
