@@ -1,0 +1,18 @@
+package com.example.learn.design.pattern.han._06行为型模式._01模板方法模式.core.improve;
+
+
+public class PureSoyaMilk extends SoyaMilk {
+
+    @Override
+    void addCondiments() {
+        // TODO Auto-generated method stub
+        //空实现
+    }
+
+    @Override
+    boolean customerWantCondiments() {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+}
