@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface ITeacherDao {
+
+    void teach(); // 授课的方法
+
+    void sayHello(String s);
+}
+
+
+class TeacherDao{
+
+    void teach(); // 授课的方法
+
+    void sayHello(String s);
+}
+
+class ProxyFactory{
+    Object target
+    ProxyFactory(Object target)
+    Object getProxyInstance()
+}
+
+class Client
+
+ITeacherDao <|.. TeacherDao
+
+TeacherDao <.. Client
+ProxyFactory <.. Client
+
+
+@enduml
