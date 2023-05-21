@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+abstract class WebSite {
+    abstract void use(User user)
+}
+
+class ConcreteWebSite{
+     use(User user)
+}
+
+class WebSiteFactory{
+    WebSite getWebSiteCategory(String type)
+
+}
+
+class Client
+
+class User
+
+WebSite <|-- ConcreteWebSite
+
+WebSiteFactory o-- WebSite
+
+WebSiteFactory <.. Client
+ConcreteWebSite <.. Client
+
+User <.. Client
+User <.. ConcreteWebSite
+@enduml
