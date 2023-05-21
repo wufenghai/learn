@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class OrganizationComponent{
+    add()
+    remove()
+    abstract void print()
+}
+
+'非叶子结点
+class University
+'非叶子结点
+class College
+'叶子结点
+class Department
+
+class Client
+
+OrganizationComponent <|-- University
+OrganizationComponent <|-- College
+OrganizationComponent <|-- Department
+
+University o-- College
+College o-- Department
+
+OrganizationComponent <.. Client
+
+@enduml
