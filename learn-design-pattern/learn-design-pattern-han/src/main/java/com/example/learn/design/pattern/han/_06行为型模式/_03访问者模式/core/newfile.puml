@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Action {
+
+    '得到男性 的测评
+    public abstract void getManResult(Man man);
+    '得到女的测评
+    public abstract void getWomanResult(Woman woman);
+}
+
+class Fail extends Action
+class Success extends Action
+
+abstract class Person {
+    '提供一个方法，让访问者可以访问
+    public abstract void accept(Action action);
+}
+
+class Man extends Person
+class Woman extends Person
+
+class ObjectStructure {
+    '维护了一个集合
+     private List<Person> persons = new LinkedList<>();
+}
+
+class Client
+
+ObjectStructure o-- Person
+Action <.. Person
+Action <.. Client
+ObjectStructure <.. Client
+
+@enduml
