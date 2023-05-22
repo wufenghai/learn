@@ -1,0 +1,47 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Command {
+    //执行动作(操作)
+    public void execute();
+    //撤销动作(操作)
+    public void undo();
+}
+
+class LightOnCommand implements Command {
+    //执行动作(操作)
+    public void execute();
+    //撤销动作(操作)
+    public void undo();
+}
+
+class LightOffCommand implements Command
+class NoCommand implements Command
+
+class LightReceiver{
+    void on()
+    void off()
+}
+
+class RemoteController{
+    // 开 按钮的命令数组
+    Command[] onCommands;
+    Command[] offCommands;
+
+}
+
+class Client
+
+
+LightOnCommand o-- LightReceiver
+LightOffCommand o-- LightReceiver
+
+RemoteController o-- Command
+
+
+RemoteController <.. Client
+LightReceiver <.. Client
+LightOnCommand <.. Client
+LightOffCommand <.. Client
+
+@enduml
