@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Mediator
+
+class Client
+
+class ConcreteMediator extends Mediator{
+     private HashMap<String, Colleague> colleagueMap;
+     GetMessage(int stateChange, String colleagueName);
+}
+
+abstract class Colleague{
+    private Mediator mediator;
+    public String name;
+    public abstract void SendMessage(int stateChange);
+    Mediator GetMediator();
+}
+
+
+class Alarm extends Colleague
+class CoffeeMachine extends Colleague
+class Curtains extends Colleague
+class TV extends Colleague
+
+Alarm <.. Mediator
+CoffeeMachine <.. Mediator
+Curtains <.. Mediator
+TV <.. Mediator
+Mediator <.. Client
+Colleague <.. Client
+
+Mediator -- Colleague
+@enduml
