@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/class-diagram
+interface FlyBehavior {
+    void fly(); // 子类具体实现
+}
+
+class NoFlyBehavior implements FlyBehavior
+class GoodFlyBehavior implements FlyBehavior
+class BadFlyBehavior implements FlyBehavior
+
+abstract class Duck{
+    FlyBehavior flyBehavior;
+}
+
+class PekingDuck extends Duck
+class WildDuck extends Duck
+class ToyDuck extends Duck
+
+interface QuackBehavior {
+    void quack();//子类实现
+}
+
+
+
+Duck o-- FlyBehavior
+
+@enduml

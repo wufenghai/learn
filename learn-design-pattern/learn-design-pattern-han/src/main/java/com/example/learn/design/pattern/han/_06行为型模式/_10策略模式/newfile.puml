@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Duck {
+    quack()
+    swim()
+    fly()
+}
+
+class WildDuck extends Duck {
+}
+
+class ToyDuck extends Duck{
+
+}
+
+class PekingDuck extends Duck {
+}
+@enduml
