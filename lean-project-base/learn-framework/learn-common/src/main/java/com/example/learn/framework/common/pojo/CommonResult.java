@@ -7,7 +7,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.util.Assert;
 
-import javax.sql.rowset.serial.SerialException;
 import java.io.Serializable;
 import java.util.Objects;
 
