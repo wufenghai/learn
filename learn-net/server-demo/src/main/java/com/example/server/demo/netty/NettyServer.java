@@ -44,6 +44,7 @@ public class NettyServer {
                         protected void initChannel(SocketChannel ch) throws Exception {
                             ChannelPipeline pipeline = ch.pipeline();
                             pipeline.addLast(new ServerInboundHandler1());
+                            pipeline.addLast(new ServerInboundHandler2());
                         }
                     });
 
