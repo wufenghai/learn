@@ -1,0 +1,22 @@
+package ${package.Service};
+
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import ${superServiceClassPackage};
+import ${package.Entity}.${entity};
+
+
+/**
+ * @Author: ${author}
+ * @Date: ${date}
+ * @Description:
+ */
+#if(${kotlin})
+interface ${table.serviceName} : ${superServiceClass}<${entity}>
+#else
+public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
+
+    IPage<${entity}> getPage(Integer pageNum, Integer pageSize, ${entity} ${table.entityPath});
+
+}
+#end
+
